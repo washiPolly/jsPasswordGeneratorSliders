@@ -9,16 +9,6 @@
 // }
 
 
-// if (pwLength > 8 || pwLength < 128) {
-//     //prompt user lower? store in var
-//     var pwLower = prompt("Would you like to include Lower Cases? Y/N ");
-//     //prompt user upper? store in var
-//     var pwUpper = prompt("Would you like to include Upper Cases? Y/N ");
-//     //prompt user number? store in var
-//     var pwNumber = prompt("Would you like to include Numbers? Y/N ");
-//     //prompt user symbol? store in var
-//     var pwSymbol = prompt("Would you like to include Symbols? Y/N ");
-// }
 
 // while (pwLower && pwUpper && pwNumber && pwSymbol === "N") {
 //     alert("At Least one selection needs to be present.");
@@ -51,10 +41,12 @@
 // checkInput();
 
 
-var lower = $(".lowerSwitch")
-var upper = $(".upperSwitch")
-var number = $(".numberSwitch")
-var symbol = $(".symbolSwitch")
+var lower = document.getElementById("lowerSwitch").checked;
+var upper = document.getElementById("upperSwitch").checked;
+var number = document.getElementById("numberSwitch").checked;
+var symbol = document.getElementById("symbolSwitch").checked;
+
+
 
 //check which Seletions made, save into array
 
@@ -64,29 +56,36 @@ function genPw() {
     //check which options selected
 
     let function_array = []
-    if(lower.is("checked")){
+    if(lower == true){
         function_array.push(getRandomLower)
     }
-    if(upper.is("checked")){
+    if(upper == true){
         function_array.push(getRandomUpper)
     }
-    if(number.is("checked")){
+    if(number == true){
         function_array.push(getRandomNum)
     }
-    if(symbol.is("checked")){
+    if(symbol == true){
         function_array.push(getRandomSym)
     }
-
+var pwLength =  $( "input" )
+    .keyup(function() {
+      var value = $( this ).val();
+      $( "number" ).text( value );
+      return pwLength;
+    })
+    .keyup();
+    console.log(pwLength);
 
     for (var i = 0; i < pwLength ; i++) {
 
         var index = Math.floor( Math.random() * function_array.length)
         finalPassword += function_array[index]()
         
-        ///console.log(getRandomLower());
-        //console.log(getRandomUpper());
-        //console.log(getRandomNum());
-       // console.log(getRandomSym());
+        console.log(getRandomLower());
+        console.log(getRandomUpper());
+        console.log(getRandomNum());
+       console.log(getRandomSym());
     }
     return finalPassword
 }
@@ -120,12 +119,26 @@ console.log( genPw());
 console.log(finalPassword);
 
 //Add event listener for Generate Password button
+
+// var pwLenth = $("input:number").val();
+// document.getElementById("pwLength").innerHTML = pwLength; 
+// console.log(pwLenth);
+
+if (pwLength < 7 || pwLength > 128 || pwLength == "") {
+    //prompt user lower? store in var
+    prompt("Please enter your desired password lenth");
+    
+}
+console.log(pwLength);
+
 $("#genBtn").click(function(){
     finalPassword = "";
     genPw();
     $("#pwBox.form-control").val(finalPassword);
-
+    console.log(pwLength);
+    
 });
+
 
 //copy button
 $("#copyBtn").click (function(){

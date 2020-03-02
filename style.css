@@ -74,3 +74,7 @@ div.custom-switch{
 #qtyLabel{
   padding-right: 10px;
 }
+
+#pwLength{
+  text-align: center;
+}
