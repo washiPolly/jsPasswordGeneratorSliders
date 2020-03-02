@@ -47,7 +47,6 @@ var number = document.getElementById("numberSwitch").checked;
 var symbol = document.getElementById("symbolSwitch").checked;
 
 
-
 //check which Seletions made, save into array
 
 var finalPassword = ""
@@ -68,14 +67,12 @@ function genPw() {
     if(symbol == true){
         function_array.push(getRandomSym)
     }
-var pwLength =  $( "input" )
-    .keyup(function() {
-      var value = $( this ).val();
-      $( "number" ).text( value );
-      return pwLength;
-    })
-    .keyup();
-    console.log(pwLength);
+
+    console.log(function_array);
+    console.log(lower);
+
+var pwLength = $( "#pwLength" ).val();
+console.log(pwLength);
 
     for (var i = 0; i < pwLength ; i++) {
 
@@ -124,18 +121,18 @@ console.log(finalPassword);
 // document.getElementById("pwLength").innerHTML = pwLength; 
 // console.log(pwLenth);
 
-if (pwLength < 7 || pwLength > 128 || pwLength == "") {
-    //prompt user lower? store in var
-    prompt("Please enter your desired password lenth");
+// if (pwLength < 7 || pwLength > 128 || pwLength == "") {
+//     //prompt user lower? store in var
+//     prompt("Please enter your desired password lenth");
     
-}
-console.log(pwLength);
+// }
+// console.log(pwLength);
 
 $("#genBtn").click(function(){
     finalPassword = "";
     genPw();
     $("#pwBox.form-control").val(finalPassword);
-    console.log(pwLength);
+    
     
 });
 
