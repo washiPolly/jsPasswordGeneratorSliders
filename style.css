@@ -1,0 +1,58 @@
+body{
+    text-align: center;
+    margin: 100px auto;
+    background-image: url(./images/email-pattern.png);
+}
+
+h2{
+    margin-bottom: 30px;
+}
+/* p.form{
+    width: 500px;
+    height: 300px;
+    border: solid black 2px;
+    text-shadow: 2px 2px;
+    
+} */
+
+div{
+    text-align: center;
+    border-style: 2px solid #cccccc;
+} 
+
+#bar{
+    padding-top: 10px;
+}
+
+h4{
+    text-align: left;
+    margin-top: 15px;
+}
+
+.form-control{
+    padding: 40px;
+    
+}
+
+.position{
+    padding-bottom: 30px;
+}
+
+#pwBox {
+    border: 2px solid #cccccc;
+    border-radius: 5px;
+    border-style: dashed;
+    width: 45%;
+    text-align: center;
+    margin-top: -25px;
+    margin-bottom: 10px;
+    
+   
+  }
+  
+
+.custom-control{
+  float: left;
+  margin: 10px 10px 10px 10px;
+  padding-bottom: 10px;
+}
