@@ -51,6 +51,11 @@
 // checkInput();
 
 
+var lower = $(".lowerSwitch")
+var upper = $(".upperSwitch")
+var number = $(".numberSwitch")
+var symbol = $(".symbolSwitch")
+
 //check which Seletions made, save into array
 
 var finalPassword = ""
@@ -59,16 +64,16 @@ function genPw() {
     //check which options selected
 
     let function_array = []
-    if(lower == "Y"){
+    if(lower.is("checked")){
         function_array.push(getRandomLower)
     }
-    if(upper == "Y"){
+    if(upper.is("checked")){
         function_array.push(getRandomUpper)
     }
-    if(number == "Y"){
+    if(number.is("checked")){
         function_array.push(getRandomNum)
     }
-    if(symbol == "Y"){
+    if(symbol.is("checked")){
         function_array.push(getRandomSym)
     }
 

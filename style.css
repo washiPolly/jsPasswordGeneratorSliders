@@ -50,9 +50,27 @@ h4{
    
   }
   
-
-.custom-control{
+.btn{
+  margin: 5px 10px;
   float: left;
-  margin: 10px 10px 10px 10px;
+  
+} 
+ 
+div.custom-switch{
+  float: left;
+  margin: 10px auto;
   padding-bottom: 10px;
+  padding-right: 10px;
+  justify-content: center;
+}
+
+#bottomBtns{
+  margin: auto;
+  justify-content: center;
+  padding-bottom: 20px;
+  
+}
+
+#qtyLabel{
+  padding-right: 10px;
 }

@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en-us">
-<meta charset= "UTF-8">
+<meta charset="UTF-8">
 
 
 <head>
     <title>JS Password Generator</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="./style.css" rel="stylesheet" type="text/css">
     <!-- Added link to the jQuery Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -14,48 +15,59 @@
 
 <body>
     <div class="row justify-content-center">
-        <div class="col-lg-4 shadow-lg bg-white rounded">
-    <h4 class="subTitle">Generate a Password</h4>
+        <div class="col-lg-5 col-md-5 shadow-lg bg-white rounded">
+            <h4 class="subTitle">Generate a Password</h4>
 
-    <div id="bar" style="border-top:2px solid #ccc; col-md-10"></div>
-  
-    <form>
-        <div class="position">
-          <label for="passwordDisplay"></label>
-          <input type="text" class="form-control" id="pwBox" style= "width: 100%; height: 100px" placeholder="Your Secure Password">
-         
-          <div id="bar" style="border-top:2px solid #ccc; col-md-10"></div>
-         
-          <div class="custom-control custom-switch">
-            <input type="checkbox" class="custom-control-input" id="lowerSwitch" checked>
-            <label class="custom-control-label" for="customSwitch1">Lower Case</label>
-          </div>
+            <div id="bar" style="border-top:2px solid #ccc; col-lg-5"></div>
 
-          <div class="custom-control custom-switch">
-            <input type="checkbox" class="custom-control-input" id="UpperSwitch1" checked>
-            <label class="custom-control-label" for="customSwitch1">Upper Case</label>
-          </div>
+            <form>
+                <div class="position">
+                    <label for="passwordDisplay"></label>
+                    <input type="text" class="form-control" id="pwBox" style="width: 100%; height: 100px"
+                        placeholder="Your Secure Password">
 
-          <div class="custom-control custom-switch">
-            <input type="checkbox" class="custom-control-input" id="numberSwitch1" checked>
-            <label class="custom-control-label" for="customSwitch1">Number</label>
-          </div>
+                    <div id="bar" style="border-top:2px solid #ccc; col-md-10"></div>
 
-          <div class="custom-control custom-switch">
-            <input type="checkbox" class="custom-control-input" id="symbolSwitch1" checked>
-            <label class="custom-control-label" for="customSwitch1">Symbol</label>
-          </div>
-          
-          <button type="button" id="genBtn" class="btn btn-danger">Generate Password</button>
-            <button type="button" id="copyBtn" class="btn btn-secondary">Copy to Clipboard</button>
-           
+                    <div class="row col-12">
+                        <label id="qtyLabel" for="quantity">Enter Desired Length of Password</label>
+                        <input type="number" id="pwLength" name="passLength" min="8" max="128" placeholder="8 - 128">
+                        </div>
+
+                        <div class="row col-12">
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="lowerSwitch" checked>
+                                <label class="custom-control-label" for="lowerSwitch">Lower Case</label>
+                            </div>
+
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="upperSwitch" checked>
+                                <label class="custom-control-label" for="upperSwitch">Upper Case</label>
+                            </div>
+
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="numberSwitch" checked>
+                                <label class="custom-control-label" for="numberSwitch">Number</label>
+                            </div>
+
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="symbolSwitch" checked>
+                                <label class="custom-control-label" for="symbolSwitch">Symbol</label>
+                            </div>
+                        </div>
+                       
+
+                    </div>
+                    <div id="bottomBtns" class="row">
+                        <button type="button" id="genBtn" class="btn btn-danger">Generate Password</button>
+                        <button type="button" id="copyBtn" class="btn btn-secondary">Copy to Clipboard</button>
+                    </div>
+                </div>
+                
+            </form>
         </div>
-    </div>
-        </form> 
-    </div> 
-    
-    
-    <script src="./script.js"></script>
+
+
+        <script src="./script.js"></script>
 </body>
 
 
