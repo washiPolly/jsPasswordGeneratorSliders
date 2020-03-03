@@ -1,51 +1,15 @@
 // //prompt user how many numbers, store in var
 // //praseInt converts String number to Integer
 
-// var pwLength = parseInt(prompt("Please Enter your Password length, must be between 8-128"));
 
-// while (pwLength < 8 || pwLength > 128) {
-//     alert("Password length must be between 8 - 128 characters");
-//     pwLength = parseInt(prompt("Please Enter your Password length, must be between 8-128"));
-// }
-
-
-
-// while (pwLower && pwUpper && pwNumber && pwSymbol === "N") {
-//     alert("At Least one selection needs to be present.");
-//     pwLower = prompt("Would you like to include Lower Cases? Y/N");
-//     pwUpper = prompt("Would you like to include Upper Cases? Y/N ");
-//     pwNumber = prompt("Would you like to include Numbers? Y/N ");
-//     pwSymbol = prompt("Would you like to include Symbols? Y/N ");
-// }
-
-// //change entries to upper case
-// var lower = pwLower.toUpperCase();
-// var upper = pwUpper.toUpperCase();
-// var number = pwNumber.toUpperCase();
-// var symbol = pwSymbol.toUpperCase();
+var lower = document.getElementById("lowerSwitch");
+var upper = document.getElementById("upperSwitch");
+var number = document.getElementById("numberSwitch");
+var symbol = document.getElementById("symbolSwitch");
 // console.log(lower);
 // console.log(upper);
 // console.log(number);
 // console.log(symbol);
-
-// function checkInput() {
-//     if (lower !== "Y" && lower !== "N" || lower == "" ||
-//         upper !== "Y" && upper !== "N" || upper == "" ||
-//         number !== "Y" && number !== "N" || number == "" ||
-//         symbol !== "Y" && symbol !== "N" || symbol == "") {
-
-//         alert("All Selections must be entered with Y/N. Please Refresh the page and start again \n");
-//         return false;
-//     }
-// }
-// checkInput();
-
-
-var lower = document.getElementById("lowerSwitch").checked;
-var upper = document.getElementById("upperSwitch").checked;
-var number = document.getElementById("numberSwitch").checked;
-var symbol = document.getElementById("symbolSwitch").checked;
-
 
 //check which Seletions made, save into array
 
@@ -55,23 +19,33 @@ function genPw() {
     //check which options selected
 
     let function_array = []
-    if(lower == true){
+    if(lower.checked){
         function_array.push(getRandomLower)
     }
-    if(upper == true){
+    if(upper.checked){
         function_array.push(getRandomUpper)
     }
-    if(number == true){
+    if(number.checked){
         function_array.push(getRandomNum)
     }
-    if(symbol == true){
+    if(symbol.checked){
         function_array.push(getRandomSym)
     }
 
-    console.log(function_array);
-    console.log(lower);
+    // console.log(function_array);
+    // console.log("lower" + lower);
+    // console.log("upper" + upper);
+    // console.log("number" + number);
+    // console.log("symbol" + symbol);
 
 var pwLength = $( "#pwLength" ).val();
+// if (pwLength < 8 || pwLength > 128 || ""){
+//     alert("Please enter you desiered password length between 8 - 128");
+//     console.log(pwLength);
+// }
+
+
+
 console.log(pwLength);
 
     for (var i = 0; i < pwLength ; i++) {
@@ -128,11 +102,14 @@ console.log(finalPassword);
 // }
 // console.log(pwLength);
 
+
 $("#genBtn").click(function(){
     finalPassword = "";
+   
+   
     genPw();
     $("#pwBox.form-control").val(finalPassword);
-    
+
     
 });
 
