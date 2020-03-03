@@ -39,12 +39,11 @@ function genPw() {
     // console.log("symbol" + symbol);
 
 var pwLength = $( "#pwLength" ).val();
-// if (pwLength < 8 || pwLength > 128 || ""){
-//     alert("Please enter you desiered password length between 8 - 128");
-//     console.log(pwLength);
-// }
-
-
+if (pwLength < 8 || pwLength > 128 || pwLength == ""){
+    alert("Please enter you desiered password length between 8 - 128");
+    console.log(pwLength);
+    return false;
+}
 
 console.log(pwLength);
 
@@ -86,7 +85,7 @@ function getRandomSym() {
 
 
 
-console.log( genPw());
+
 console.log(finalPassword);
 
 //Add event listener for Generate Password button
@@ -103,15 +102,21 @@ console.log(finalPassword);
 // console.log(pwLength);
 
 
+
 $("#genBtn").click(function(){
+    if (pwLength < 8 || pwLength > 128 || pwLength == ""){
+        alert("Please enter you desiered password length between 8 - 128");
+        console.log(pwLength);
+        }
+    else{
     finalPassword = "";
-   
-   
     genPw();
     $("#pwBox.form-control").val(finalPassword);
-
+    }
     
 });
+
+
 
 
 //copy button
